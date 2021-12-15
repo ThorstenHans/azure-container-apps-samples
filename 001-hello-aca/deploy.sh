@@ -16,6 +16,7 @@ image=mcr.microsoft.com/azuredocs/containerapps-helloworld:latest
 
 echo "Creating Resource Group"
 az group create -n $rgName -l $location
+
 echo "Creating Log Analytics Workspace"
 lawClientId=$(az monitor log-analytics workspace create --workspace-name $lawName -g $rgName --query customerId -o tsv)
 lawClientSecret=$(az monitor log-analytics workspace get-shared-keys -n $lawName -g $rgName --query primarySharedKey -o tsv)
