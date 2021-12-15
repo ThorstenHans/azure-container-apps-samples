@@ -1,0 +1,166 @@
+{
+	"info": {
+		"_postman_id": "7a60865b-0400-486d-864a-76fbb76fe233",
+		"name": "Azure Container Apps Multi Container",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Hello",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n {\n     \"itemId\": \"1\",\n     \"count\": 2\n },\n {\n     \"itemId\": \"2\",\n     \"count\": 5\n }   \n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{root}}/hello",
+					"host": [
+						"{{root}}"
+					],
+					"path": [
+						"hello"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Order",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = JSON.parse(responseBody); ",
+							"pm.collectionVariables.set(\"order_id\", jsonData.id);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n {\n     \"itemId\": \"12\",\n     \"count\": 2\n },\n {\n     \"itemId\": \"2\",\n     \"count\": 5\n }   \n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{root}}/orders",
+					"host": [
+						"{{root}}"
+					],
+					"path": [
+						"orders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Inventory",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n {\n     \"itemId\": \"1\",\n     \"count\": 2\n },\n {\n     \"itemId\": \"2\",\n     \"count\": 5\n }   \n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{root}}/inventory/1235",
+					"host": [
+						"{{root}}"
+					],
+					"path": [
+						"inventory",
+						"1235"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Order",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n {\n     \"itemId\": \"1\",\n     \"count\": 2\n },\n {\n     \"itemId\": \"2\",\n     \"count\": 5\n }   \n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{root}}/orders/{{order_id}}",
+					"host": [
+						"{{root}}"
+					],
+					"path": [
+						"orders",
+						"{{order_id}}"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "root",
+			"value": "https://facade-api.mangograss-7f331ae5.canadacentral.azurecontainerapps.io"
+		},
+		{
+			"key": "order_id",
+			"value": ""
+		}
+	]
+}
