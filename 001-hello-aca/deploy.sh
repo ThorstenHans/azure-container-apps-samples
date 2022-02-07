@@ -9,7 +9,7 @@ echo "Ensuring Microsoft.Web provider is registered with current Azure Subscript
 az provider register --namespace Microsoft.Web
 
 rgName=rg-hello-aca
-location=eastus
+location=northeurope
 lawName=law-hello-aca
 acaEnvironmentName=hello-aca
 image=mcr.microsoft.com/azuredocs/containerapps-helloworld:latest
