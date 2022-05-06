@@ -3,16 +3,19 @@
 set -e
 
 echo "Adding Azure Container Apps extension to Azure CLI"
-# az extension add --source https://workerappscliextension.blob.core.windows.net/azure-cli-extension/containerapp-0.2.0-py2.py3-none-any.whl
+az extension add -n containerapp --upgrade
 
-echo "Ensuring Microsoft.Web provider is registered with current Azure Subscription"
+echo "Ensuring Microsoft.Web and Microsoft.App providers are registered with current Azure Subscription"
 az provider register --namespace Microsoft.Web
+az provider register --namespace Microsoft.App
+
 
 rgName=rg-hello-aca
 location=northeurope
-lawName=law-hello-aca
+
 acaEnvironmentName=hello-aca
-image=mcr.microsoft.com/azuredocs/containerapps-helloworld:latest
+lawName=law-hello-aca
+image=thorstenhans/gopher:hero
 
 echo "Creating Resource Group"
 az group create -n $rgName -l $location
