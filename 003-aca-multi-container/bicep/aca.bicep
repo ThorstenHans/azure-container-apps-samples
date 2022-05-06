@@ -6,13 +6,12 @@ param containerPort int
 param isExternalIngress bool
 param containerRegistry string
 param containerRegistryUsername string
-param env array = []
-param daprComponents array = []
+param env array = [] 
 param secrets array = [
-  {
-    name: 'docker-password'
-    value: containerRegistryPassword
-  }
+    {
+        name: 'docker-password'
+        value: containerRegistryPassword
+    }
 ]
 
 @secure()
@@ -20,47 +19,46 @@ param containerRegistryPassword string
 
 var registrySecretRefName = 'docker-password'
 
-resource containerApp 'Microsoft.Web/containerApps@2021-03-01' = {
-  name: containerAppName
-  kind: 'containerapp'
-  location: location
-  properties: {
-    kubeEnvironmentId: environmentId
-    configuration: {
-      secrets: secrets
-      registries: [
-        {
-          server: containerRegistry
-          username: containerRegistryUsername
-          passwordSecretRef: registrySecretRefName
+resource containerApp 'Microsoft.App/containerApps@2022-01-01-preview' = {
+    name: containerAppName
+    location: location
+    properties: {
+        managedEnvironmentId: environmentId
+        configuration: {
+            secrets: secrets
+            registries: [
+                {
+                    server: containerRegistry
+                    username: containerRegistryUsername
+                    passwordSecretRef: registrySecretRefName
+                }
+            ]
+            ingress: {
+                external: isExternalIngress
+                targetPort: containerPort
+                transport: 'auto'
+            }
+            dapr: {
+                enabled: true
+                appPort: containerPort
+                appId: containerAppName
+                appProtocol: 'http'
+            }
         }
-      ]
-      ingress: {
-        external: isExternalIngress
-        targetPort: containerPort
-        transport: 'auto'
-      }
-    }
-    template: {
-      containers: [
-        {
-          image: containerImage
-          name: containerAppName
-          env: env
+        template: {
+            containers: [
+                {
+                    image: containerImage
+                    name: containerAppName
+                    env: env
+                }
+            ]
+            scale: {
+                minReplicas: 1
+                maxReplicas: 1
+            }
         }
-      ]
-      scale: {
-        minReplicas: 1
-        maxReplicas: 1
-      }
-      dapr: {
-        enabled: true
-        appPort: containerPort
-        appId: containerAppName
-        components: daprComponents
-      }
     }
-  }
 }
 
 output fqdn string = containerApp.properties.configuration.ingress.fqdn

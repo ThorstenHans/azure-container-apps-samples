@@ -1,6 +1,7 @@
 param accountName string = 'cosmos-${uniqueString(resourceGroup().id)}'
 param location string = resourceGroup().location
 param primaryRegion string = resourceGroup().location
+
 @allowed([
   'Eventual'
   'ConsistentPrefix'
