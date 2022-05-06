@@ -17,6 +17,7 @@ module containerAppEnvironment 'aca-environment.bicep' = {
   params: {
     name: envName
     location: location
+    
     lawClientId:law.outputs.clientId
     lawClientSecret: law.outputs.clientSecret
   }
@@ -29,14 +30,14 @@ module containerApp 'aca.bicep' = {
     location: location
     containerAppEnvironmentId: containerAppEnvironment.outputs.id
     containerImage: containerImage
-    containerPort: containerPort
     envVars: [
         {
-        name: 'ASPNETCORE_ENVIRONMENT'
-        value: 'Production'
+            name: 'ASPNETCORE_ENVIRONMENT'
+            value: 'Production'
         }
     ]
     useExternalIngress: true
+    containerPort: containerPort
 
   }
 }

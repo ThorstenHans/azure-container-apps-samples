@@ -3,13 +3,10 @@ param location string
 param lawClientId string
 param lawClientSecret string
 
-// this namespace will change in March 2022 (now :D) Microsoft.Apps
-resource env 'Microsoft.Web/kubeEnvironments@2021-02-01' = {
+resource env 'Microsoft.App/managedEnvironments@2022-01-01-preview' = {
   name: name
   location: location
   properties: {
-    type: 'managed'
-    internalLoadBalancerEnabled: false
     appLogsConfiguration: {
       destination: 'log-analytics'
       logAnalyticsConfiguration: {
