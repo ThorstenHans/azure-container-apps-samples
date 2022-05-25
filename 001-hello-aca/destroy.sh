@@ -6,4 +6,4 @@ rgName=rg-hello-aca
 
 echo "Deleting Resource Group '${rgName}'" 
 
-az group delete -n $rgName
+az group delete -n $rgName --no-wait --yes
