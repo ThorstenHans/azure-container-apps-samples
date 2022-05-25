@@ -13,7 +13,7 @@ param containerPort int
 param envVars array = []
 
 
-resource containerApp 'Microsoft.App/containerApps@2022-01-01-preview' = {
+resource containerApp 'Microsoft.App/containerApps@2022-03-01' = {
   name: name
   location: location
   properties: {

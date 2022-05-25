@@ -10,7 +10,7 @@ param containerImage string
 param useExternalIngress bool = false
 param containerPort int
 
-resource containerApp 'Microsoft.App/containerApps@2022-01-01-preview' = {
+resource containerApp 'Microsoft.App/containerApps@2022-03-01' = {
     name: name
     location: location
     properties: {

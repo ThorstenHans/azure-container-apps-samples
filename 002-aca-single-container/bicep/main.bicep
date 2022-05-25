@@ -1,5 +1,5 @@
 param location string = resourceGroup().location
-param envName string = 'blog-sample'
+param envName string = 'env-single-container'
 
 param containerImage string = 'thorstenhans/paint:0.0.1'
 param containerPort int = 80
@@ -30,12 +30,7 @@ module containerApp 'aca.bicep' = {
     location: location
     containerAppEnvironmentId: containerAppEnvironment.outputs.id
     containerImage: containerImage
-    envVars: [
-        {
-            name: 'ASPNETCORE_ENVIRONMENT'
-            value: 'Production'
-        }
-    ]
+    envVars: []
     useExternalIngress: true
     containerPort: containerPort
 
