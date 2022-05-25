@@ -1,0 +1,3 @@
+name: 011-deploy-aca-with-pulumi
+runtime: go
+description: Sample Deployment for Azure Container Apps
