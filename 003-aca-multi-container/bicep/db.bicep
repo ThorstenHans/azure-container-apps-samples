@@ -1,4 +1,4 @@
-param accountName string = 'cosmos-${uniqueString(resourceGroup().id)}'
+param accountName string = 'cosmos-multi-conainer-sample'
 param location string = resourceGroup().location
 param primaryRegion string = resourceGroup().location
 

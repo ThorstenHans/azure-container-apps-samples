@@ -12,7 +12,7 @@ resource daprComponent 'Microsoft.App/managedEnvironments/daprComponents@2022-03
         componentType: 'state.azure.cosmosdb'
         version: 'v1'
         ignoreErrors: false
-        initTimeout: '5s'
+        initTimeout: '5m'
         secrets: [
             {
                 name: 'masterkey'
@@ -33,7 +33,7 @@ resource daprComponent 'Microsoft.App/managedEnvironments/daprComponents@2022-03
                 value: 'orders'
             }
             {
-                name: 'masterkey'
+                name: 'masterKey'
                 secretRef: 'masterkey'
             }
         ]

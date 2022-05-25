@@ -1,5 +1,5 @@
 param location string = resourceGroup().location
-param environmentName string = 'env-${uniqueString(resourceGroup().id)}'
+param environmentName string = 'env-multi-container'
 
 param facadeServiceImage string = 'acawebinar.azurecr.io/facade:0.0.7'
 param facadeServicePort int = 8080
