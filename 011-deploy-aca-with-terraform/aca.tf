@@ -2,7 +2,7 @@ resource "azapi_resource" "aca_env" {
   type      = "Microsoft.App/managedEnvironments@2022-03-01"
   parent_id = azurerm_resource_group.rg.id
   location  = azurerm_resource_group.rg.location
-  name      = "aca-env-terraform"
+  name      = "env-terraform"
   tags      = local.tags
 
   body = jsonencode({

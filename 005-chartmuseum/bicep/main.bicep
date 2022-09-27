@@ -1,5 +1,5 @@
 param location string = resourceGroup().location
-param envName string = 'chartmuseum'
+param name string = 'chartmuseum'
 param storageAccountName string = 'sachartmuseumaca'
 param containerImage string = 'chartmuseum/chartmuseum:latest'
 param containerPort int = 8080
@@ -9,14 +9,14 @@ module law 'log-analytics.bicep' = {
 	name: 'log-analytics-workspace'
 	params: {
       location: location
-      name: 'law-${envName}'
+      name: 'law-${name}'
 	}
 }
 
 module containerAppEnvironment 'aca-environment.bicep' = {
   name: 'container-app-environment'
   params: {
-    name: envName
+    name: 'env-${name}'
     location: location
     lawClientId: law.outputs.clientId
     lawClientSecret: law.outputs.clientSecret

@@ -1,15 +1,15 @@
 param location string = resourceGroup().location
-param environmentName string = 'env-multi-container'
+param name string = 'multi-container'
 
-param facadeServiceImage string = 'acawebinar.azurecr.io/facade:0.0.7'
+param facadeServiceImage string = 'facade:latest'
 param facadeServicePort int = 8080
 param isFacadeServiceExternalIngress bool = true
 
-param orderServiceImage string = 'acawebinar.azurecr.io/orders:0.0.12'
+param orderServiceImage string = 'orders:latest'
 param orderServicePort int = 8080
 param isOrderServiceExternalIngress bool = false
 
-param inventoryServiceImage string = 'acawebinar.azurecr.io/inventory:0.0.4'
+param inventoryServiceImage string = 'inventory:latest'
 param inventoryServicePort int = 8080
 param isInventoryServiceExternalIngress bool = false
 
@@ -26,7 +26,7 @@ var inventoryServiceName = 'inventory-api'
 module environment 'environment.bicep' = {
     name: 'container-app-environment'
     params: {
-        environmentName: environmentName
+        environmentName: 'env-${name}'
         location: location
     }
 }
@@ -42,7 +42,7 @@ module cosmosdb 'db.bicep' = {
 module daprStateStore 'dapr.bicep' = {
     name: 'dapr-state-store'
     params: {
-        containerAppEnvironmentName: environmentName
+        containerAppEnvironmentName: 'env-${name}'
         cosmosDbDocumentEndpoint: cosmosdb.outputs.documentEndpoint
         cosmosDbMasterKey: cosmosdb.outputs.primaryMasterKey
         scopes: [

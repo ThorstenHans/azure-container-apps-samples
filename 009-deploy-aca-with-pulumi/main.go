@@ -49,7 +49,7 @@ func main() {
 			},
 		).(pulumi.StringOutput)
 
-		env, err := app.NewManagedEnvironment(ctx, addStackSuffix(ctx, "aca-env-pulumi", true), &app.ManagedEnvironmentArgs{
+		env, err := app.NewManagedEnvironment(ctx, addStackSuffix(ctx, "env-pulumi", true), &app.ManagedEnvironmentArgs{
 			ResourceGroupName: rgName,
 			AppLogsConfiguration: app.AppLogsConfigurationArgs{
 				Destination: pulumi.String("log-analytics"),

@@ -27,7 +27,7 @@ module law 'modules/log-analytics.bicep' = {
 module containerAppEnvironment 'modules/container-app-env.bicep' = {
     name: 'container-app-environment'
     params: {
-        name: 'acaenv-msi-sample'
+        name: 'env-msi-sample'
         location: location
         lawClientId: law.outputs.clientId
         lawClientSecret: law.outputs.clientSecret

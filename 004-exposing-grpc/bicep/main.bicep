@@ -1,5 +1,5 @@
 param location string = resourceGroup().location
-param envName string = 'exposing-grpc'
+param name string = 'grpc'
 
 param containerImage string = 'thorstenhans/grpc-service:0.0.1'
 param containerPort int = 5000
@@ -8,14 +8,14 @@ module law 'log-analytics.bicep' = {
 	name: 'log-analytics-workspace'
 	params: {
       location: location
-      name: 'law-${envName}'
+      name: 'law-${name}'
 	}
 }
 
 module containerAppEnvironment 'aca-environment.bicep' = {
-  name: 'aca-env-${envName}'
+  name: 'aca-env-${name}'
   params: {
-    name: envName
+    name: 'env-${name}'
     location: location
     lawClientId:law.outputs.clientId
     lawClientSecret: law.outputs.clientSecret

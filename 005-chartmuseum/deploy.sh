@@ -10,4 +10,4 @@ az group create -n $rgName -l $location
 
 echo ""
 echo "Starting Azure Container Apps Deployment..."
-az deployment group create -g $rgName -f ./bicep/main.bicep
+az deployment group create -g $rgName -f ./bicep/main.bicep -p adminPassword=SecretSauce123

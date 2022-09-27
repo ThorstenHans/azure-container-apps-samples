@@ -11,7 +11,6 @@ param useExternalIngress bool = false
 param containerPort int
 
 param revisionMode string
-param revisions array = []
 param envVars array = []
 
 resource containerApp 'Microsoft.App/containerApps@2022-03-01' = {

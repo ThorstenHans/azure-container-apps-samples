@@ -15,7 +15,7 @@ module law 'log-analytics.bicep' = {
 module containerAppEnvironment 'aca-environment.bicep' = {
   name: 'aca-env-${name}'
   params: {
-    name: 'aca-env-${name}'
+    name: 'env-${name}'
     location: location
     lawClientId:law.outputs.clientId
     lawClientSecret: law.outputs.clientSecret
