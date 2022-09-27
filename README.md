@@ -10,3 +10,7 @@ This repository contains some samples to demonstrate usage of Azure Container Ap
 6. Do you want to use custom health probes? See [006-custom-probes](./006-custom-probes/)
 7. Wanna use Managed Identities in Azure Container Apps? See [007-managed-identities](./007-managed-identities/)
 8. See how to apply traffic splitting in [008-traffic-split](./008-traffic-split/)
+9. See how to deploy Azure Container Apps with Pulumi in [009-deploy-aca-with-pulumi](./009-deploy-aca-with-pulumi/)
+10. A simple sample for `az containerapp up` [010-up](./010-up/)
+11. See how to deploy Azure Container Apps with Terraform in [011-deploy-aca-with-terraform](./011-deploy-aca-with-terraform/)
+12. Pull Docker images from ACR using Managed Service Identity (MSI) in [./012-pull-from-acr-with-msi](./012-pull-from-acr-with-msi/)
