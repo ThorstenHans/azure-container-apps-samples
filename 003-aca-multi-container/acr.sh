@@ -2,8 +2,8 @@
 
 set -e
 
-rgName="rg-aca-multi-container"
-location="germanywestcentral"
+rgName="rg-aca-multicontainer"
+location="eastus"
 acrName="acasample03"
 echo "Creating Resource Group"
 
@@ -35,5 +35,5 @@ echo "Please set ACR_SERVER, ACR_ADMIN_USERNAME and ACR_ADMIN_PASSWORD"
 echo "ACR_SERVER=$acrName.azurecr.io"
 echo "ACR_ADMIN_USERNAME=$acrName"
 echo ""
-echo "grab the admin password using 'p=$(az acr credential show -n $acrName --query 'passwords[0].value' -o tsv)'"
+echo "grab the admin password using 'az acr credential show -n $acrName --query 'passwords[0].value' -o tsv'"
 echo "ACR_ADMIN_PASSWORD=$p"
