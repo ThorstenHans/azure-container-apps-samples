@@ -2,7 +2,7 @@ param location string = resourceGroup().location
 param name string = 'traffic-split'
 
 param containerImage string = 'thorstenhans/gopher:good_morning'
-param containerPort int = 80
+param containerPort int = 8080
 
 module law 'log-analytics.bicep' = {
 	name: 'log-analytics-workspace'

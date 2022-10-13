@@ -70,7 +70,7 @@ func main() {
 			Configuration: app.ConfigurationArgs{
 				Ingress: app.IngressArgs{
 					External:   pulumi.Bool(true),
-					TargetPort: pulumi.Int(80),
+					TargetPort: pulumi.Int(8080),
 				},
 			},
 			Template: app.TemplateArgs{

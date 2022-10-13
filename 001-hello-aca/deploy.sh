@@ -32,7 +32,7 @@ echo ""
 
 echo "Deploying Container to Azure Container App"
 
-fqdn=$(az containerapp create -n hello-aca -g $rgName --environment $acaEnvironmentName --image $image --target-port 80 --ingress external --query configuration.ingress.fqdn -o tsv)
+fqdn=$(az containerapp create -n hello-aca -g $rgName --environment $acaEnvironmentName --image $image --target-port 8080 --ingress external --query configuration.ingress.fqdn -o tsv)
 echo ""
 
 echo -e "Our Azure Container App is up and running at https://${fqdn}"

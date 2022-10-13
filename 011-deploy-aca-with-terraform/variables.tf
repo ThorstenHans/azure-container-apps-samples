@@ -22,7 +22,7 @@ variable "container_apps" {
     image           = "thorstenhans/gopher"
     name            = "herogopher"
     tag             = "hero"
-    containerPort   = 80
+    containerPort   = 8080
     ingress_enabled = true
     min_replicas    = 1
     max_replicas    = 2
@@ -33,7 +33,7 @@ variable "container_apps" {
       image           = "thorstenhans/gopher"
       name            = "devilgopher"
       tag             = "devil"
-      containerPort   = 80
+      containerPort   = 8080
       ingress_enabled = true
       min_replicas    = 1
       max_replicas    = 2
