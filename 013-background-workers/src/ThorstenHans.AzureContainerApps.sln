@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30114.105
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThorstenHans.AzureContainerApps.BackgroundWorker", "BackgroundWorker\ThorstenHans.AzureContainerApps.BackgroundWorker.csproj", "{C4600631-BB18-41C8-97FC-81F2CB347744}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThorstenHans.AzureContainerApps.Api", "Api\ThorstenHans.AzureContainerApps.Api.csproj", "{8B139C39-C705-4517-B592-391ABF0A5A89}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C4600631-BB18-41C8-97FC-81F2CB347744}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C4600631-BB18-41C8-97FC-81F2CB347744}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C4600631-BB18-41C8-97FC-81F2CB347744}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C4600631-BB18-41C8-97FC-81F2CB347744}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8B139C39-C705-4517-B592-391ABF0A5A89}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8B139C39-C705-4517-B592-391ABF0A5A89}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8B139C39-C705-4517-B592-391ABF0A5A89}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8B139C39-C705-4517-B592-391ABF0A5A89}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
