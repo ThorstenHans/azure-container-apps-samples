@@ -1,6 +1,10 @@
-# Samples for Azure Container Apps
+# Azure Container Apps - Samples
 
-This repository contains some samples to demonstrate usage of Azure Container Apps (ACA). Consult [the ACA tag on my blog for detailed articles and guides](https://www.thorsten-hans.com/tags/azure-container-apps/).
+This repository contains samples to demonstrate usage of Azure Container Apps (ACA). If you encounter any bug or miss something you're looking for, file an issue.
+
+For further documentation on each samples, consult [the Azure Container Apps tag on my blog](https://www.thorsten-hans.com/tags/azure-container-apps/).
+
+## Sample Index
 
 1. Find a simple "Hello World" in [001-hello-aca](./001-hello-aca)
 2. See how a single-container app is provisioned using Bicep in [002-aca-single-container](./002-aca-single-container)
@@ -15,3 +19,8 @@ This repository contains some samples to demonstrate usage of Azure Container Ap
 11. See how to deploy Azure Container Apps with Terraform in [011-deploy-aca-with-terraform](./011-deploy-aca-with-terraform/)
 12. Pull Docker images from ACR using Managed Service Identity (MSI) in [./012-pull-from-acr-with-msi](./012-pull-from-acr-with-msi/)
 13. Learn how to build a Background Worker (in .NET) and scale it horizontally using built-in KEDA support [./013-background-workers/](./013-background-workers/)
+
+## Contact
+
+- Twitter [@ThorstenHans](https://twitter.com/ThorstenHans)
+- Blog [https://www.thorsten-hans.com](https://www.thorsten-hans.com)
