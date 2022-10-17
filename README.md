@@ -14,3 +14,4 @@ This repository contains some samples to demonstrate usage of Azure Container Ap
 10. A simple sample for `az containerapp up` [010-up](./010-up/)
 11. See how to deploy Azure Container Apps with Terraform in [011-deploy-aca-with-terraform](./011-deploy-aca-with-terraform/)
 12. Pull Docker images from ACR using Managed Service Identity (MSI) in [./012-pull-from-acr-with-msi](./012-pull-from-acr-with-msi/)
+13. Learn how to build a Background Worker (in .NET) and scale it horizontally using built-in KEDA support [./013-background-workers/](./013-background-workers/)
